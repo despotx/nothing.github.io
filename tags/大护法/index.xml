@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>大护法 on </title>
+    <link>https://localhost:1313/tags/%E5%A4%A7%E6%8A%A4%E6%B3%95/</link>
+    <description>Recent content in 大护法 on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 14 Oct 2023 09:53:11 +0800</lastBuildDate><atom:link href="https://localhost:1313/tags/%E5%A4%A7%E6%8A%A4%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>first</title>
+      <link>https://localhost:1313/post/first/</link>
+      <pubDate>Sat, 14 Oct 2023 09:53:11 +0800</pubDate>
+      
+      <guid>https://localhost:1313/post/first/</guid>
+      <description>first post </description>
+    </item>
+    
+  </channel>
+</rss>
