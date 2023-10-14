@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	
-	<title>DespotX`s blogs </title>
+	<title>DespotX`s blogs  | 使用hugo和github搭建个人博客网站</title>
 	<meta name="viewport" content="width=device-width,minimum-scale=1">
 	<meta name="generator" content="Hugo 0.119.0">
 	
@@ -27,9 +27,6 @@
 
 	
 
-	
-	<link rel="alternate" href="/orion/categories/index.xml" type="application/rss+xml" title="DespotX`s blogs">
-	<link rel="feed" href="/orion/categories/index.xml" type="application/rss+xml" title="DespotX`s blogs">
 	
 	
 	
@@ -153,23 +150,108 @@ onload='renderMathInElement(document.body);'></script>
 		<header class="w-full md:w-2/5 xl:w-1/3 md:pr-12 lg:pr-20 xl:pr-24 order-1 md:order-1 max-w-2xl">
 			<div
 				class="z-50 bg-gray-100 bg-opacity-75 bg-opacity-custom lg:min-w-0.7 max-w-xl md:float-right md:text-right leading-loose tracking-tight md:sticky md:top-0 pt-2">
-					<div class="pb-4">
-		<h1 >
-			<a href="https://despotx.github.io/orion/" title="DespotX`s blogs" class="heading font-cursive icon">DespotX`s blogs</a>
-		</h1>
-	</div>
+				
+<div>
+	<h2>
+		<a href="https://despotx.github.io/orion/" title="DespotX`s blogs" class="heading font-cursive icon">DespotX`s blogs</a>
+	</h2>
+</div>
+<h1 class="pt-2">使用hugo和github搭建个人博客网站</h1>
+
+<h3 class="text-java-700 font-normal leading-relaxed pt-2">首次建站经验贴</h3>
+
+<div class="flex flex-wrap justify-end pt-2 "><div class="md:flex-grow-0 font-light">
+	
+	
+	
+	
+	<a class="post-taxonomy-category text-medium-red-violet-600 hover:text-medium-red-violet-400"
+		href='/categories/%E7%AC%94%E8%AE%B0%E5%88%86%E4%BA%AB'>笔记分享</a>
+	
+	
+	
+
+	
+
+	
+</div><time class="text-eucalyptus-500 md:text-right md:flex-grow font-light pl-4"
+		datetime="2023-10-14T22:27:37&#43;08:00">2023-10-14</time>
+</div>
+
+<hr />
+
+
+			</div>
+		</header>
+		<main role="main" class="w-full md:w-3/5 xl:w-2/3 max-w-3xl order-2 md:order-2 min-h-70vh pt-2 pb-4">
+			
+
+<article>
+	<section class="mx-auto content">
+		<div class="c-rich-text"><h1 id="1-序言">1. 序言</h1>
+<ul>
+<li>最近求职面试，最大的问题便是和面试官面对面坐着时无话可说。<br></li>
+</ul>
+<p>自己平时也比较爱折腾，喜欢尝试各种东西。但是，没有怎么记录下来，过了一段时间，再提起其中的某些细节，<br>
+就开始阿巴阿巴；要么，就是笔记记得太散，分散在多个设备、多款软件。需要的时候总会各种凌乱。<br>
+因此，就想着能不能养成一直在某个地方进行记录的习惯，最好能放到云平台上。可以不用担心换设备和软件的<br>
+问题。于是，就想着要不要弄一个网站来做这件事情。最后发现，hugo的操作比较简洁方便，github<br>
+也提供托管功能。又好又省,可以将时间精力更多的分配到内容制作上。最后就决定使用hugo和github<br>
+来弄。这里记录了这一过程，会介绍该过程遇到的问题和自己的理解。对想快速搭建自己的个人网站且不爱看或<br>
+不方便看文档的同学会很有帮助。<br></p>
+<h1 id="2-github-创建仓库">2. github 创建仓库</h1>
+<h2 id="21-仓库创建和开启page功能">2.1 仓库创建和开启page功能</h2>
+<h2 id="22-仓库和网站的映射">2.2 仓库和网站的映射</h2>
+<ul>
+<li>根链接：
+<ul>
+<li>代码仓库<br>
+<a href="https://github.com/user_name/repo_name/">https://github.com/user_name/repo_name/</a></li>
+<li>网站<br>
+<a href="https://user_name.github.io/repo_name/">https://user_name.github.io/repo_name/</a></li>
+</ul>
+</li>
+</ul>
+<p><strong>注意，以下使用的地址/链接均是相对根链接的。</strong></p>
+<p>输入网址/path时，会到仓库的/path目录取依次查找相关的文件：</p>
+<ol>
+<li>如果存在index.html，则只会使用index.html。</li>
+<li>如果存在README.md，则会使用README.md。<strong>会将有效的目录作为链接+README.md的内容一并返回（垂直排列）。</strong></li>
+<li>如果都不存在则会报404错误。</li>
+</ol>
+<p><img src="https://despotx.github.io/orion/img/%E4%BD%BF%E7%94%A8hugo%E5%92%8Cgithub%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/%E4%BB%93%E5%BA%93%E7%BB%93%E6%9E%84.png" alt="仓库结构图"></p>
+<p>如上图，输入/时，会显示/index.html的内容；输入/sub/时，会列出/的链接和显示<br>
+/sub/README.md的内容，因为/可以返回内容，如下图所示；输入/sub1/时，报404错误。</p>
+<p><img src="https://despotx.github.io/orion/img/%E4%BD%BF%E7%94%A8hugo%E5%92%8Cgithub%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/README%E7%BB%93%E6%9E%9C.png" alt="结果显示"></p>
+<p>上图为/sub/返回的结果。其中，上面部分为链接（上一级目录可以渲染，为根目录，目录名称为test）,<br>
+下面部分为/sub/README.md的内容。</p>
+<h1 id="3-hugo安装和使用">3. hugo安装和使用</h1>
+<h1 id="4-部署网站到仓库">4. 部署网站到仓库</h1>
+</div>
+	</section>
+
+
+</article>
+
+		</main>
+		<div class="w-full h-0 flex-none order-3"></div>
+		<aside role="contentinfo"
+			class="w-full md:w-2/5 xl:w-1/3 md:pr-12 lg:pr-20 xl:pr-24 order-4 md:order-3 md:sticky md:bottom-0 self-end max-w-2xl">
+			<div class="md:float-right md:text-right leading-loose tracking-tight md:mb-2">
+				
+	<div class="md:max-w-xs  flex flex-col md:items-end">
 	<ul class="font-serif flex-grow-0 flex justify-between flex-wrap md:flex-col">
 	
 	
 	<li class="px-1 md:px-0">
-		<a href="/orion/post/" title="Posts page" >
+		<a href="/orion/post/" title="Posts page" 
+			class="font-medium text-medium-red-violet-600 hover:text-medium-red-violet-400" >
 			Posts
 		</a>
 	</li>
 	
 	<li class="px-1 md:px-0">
-		<a href="/orion/categories/" title="Categories page" 
-			class="font-medium text-medium-red-violet-600 hover:text-medium-red-violet-400" >
+		<a href="/orion/categories/" title="Categories page" >
 			Categories
 		</a>
 	</li>
@@ -199,67 +281,6 @@ onload='renderMathInElement(document.body);'></script>
 	</div>
 	
 </ul>
-			</div>
-		</header>
-		<main role="main" class="w-full md:w-3/5 xl:w-2/3 max-w-3xl order-2 md:order-2 min-h-70vh pt-2 pb-4">
-			
-
-
-<article>
-	<div>
-		
-	</div>
-</article>
-<div>
-	<section>
-		
-		<section>
-		<hr class="p-0 my-4" />
-			<div class="clearfix">
-				<span class="float-left text-3xl pr-6 font-serif pt-1">
-					<a href="/categories/%E7%AC%94%E8%AE%B0%E5%88%86%E4%BA%AB">
-						笔记分享
-					</a>
-				</span>
-				
-				
-				<a class="font-serif leading-relaxed text-gray-600 hover:text-gray-700 focus:text-gray-700 font-light "
-					href="https://despotx.github.io/orion/post/%E4%BD%BF%E7%94%A8hugo%E5%92%8Cgithub%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/">
-					使用hugo和github搭建个人博客网站
-				</a>
-				<span class="text-gray-600"></span>
-				
-				
-			</div>
-		</section>
-		
-	</section>
-</div>
-
-		</main>
-		<div class="w-full h-0 flex-none order-3"></div>
-		<aside role="contentinfo"
-			class="w-full md:w-2/5 xl:w-1/3 md:pr-12 lg:pr-20 xl:pr-24 order-4 md:order-3 md:sticky md:bottom-0 self-end max-w-2xl">
-			<div class="md:float-right md:text-right leading-loose tracking-tight md:mb-2">
-				
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="md:max-w-xs  flex flex-col md:items-end pt-2">
 	
 
 <div class="flex flex-wrap-reverse md:justify-end content-end md:content-start justify-start items-start   max-h-16">
@@ -282,17 +303,42 @@ onload='renderMathInElement(document.body);'></script>
 	
 </div>
 
-	<div class="a-gray text-sm text-gray-500 leading-tight">
+	<div class="text-sm text-gray-500 leading-tight a-gray">
 		探索世界、发现世界、拥抱世界。
 		
 		
 	</div>
 </div>
+
 			</div>
 		</aside>
 		<footer class="w-full md:w-3/5 xl:w-2/3 order-3 max-w-3xl md:order-4 pt-2">
 			
-			
+<hr class="double-line" />
+<div class="flex flex-wrap justify-between pb-2 leading-loose font-serif">
+    
+    <a class="flex-grow-0" href="/orion/contact/">
+        <svg class="fill-current inline-block h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
+            height="24">
+            <path fill="none" d="M0 0h24v24H0z" />
+            <path d="M7.828 11H20v2H7.828l5.364 5.364-1.414 1.414L4 12l7.778-7.778 1.414 1.414z" /></svg>
+        Contact
+    </a>
+    
+    
+</div>
+<div >
+
+
+
+</div>
+<hr />
+<div class="pb-2">
+    
+    "An unexamined life is not worth living." -- Socrates
+</div>
+<hr />
+
 		</footer>
 		
 

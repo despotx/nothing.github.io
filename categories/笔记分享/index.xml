@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>笔记分享 on DespotX`s blogs</title>
+    <link>https://despotx.github.io/orion/categories/%E7%AC%94%E8%AE%B0%E5%88%86%E4%BA%AB/</link>
+    <description>Recent content in 笔记分享 on DespotX`s blogs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>cn</language>
+    <copyright>探索世界、发现世界、拥抱世界。</copyright>
+    <lastBuildDate>Sat, 14 Oct 2023 22:27:37 +0800</lastBuildDate>
+    
+	<atom:link href="https://despotx.github.io/orion/categories/%E7%AC%94%E8%AE%B0%E5%88%86%E4%BA%AB/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>使用hugo和github搭建个人博客网站</title>
+      <link>https://despotx.github.io/orion/post/%E4%BD%BF%E7%94%A8hugo%E5%92%8Cgithub%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/</link>
+      <pubDate>Sat, 14 Oct 2023 22:27:37 +0800</pubDate>
+      
+      <guid>https://despotx.github.io/orion/post/%E4%BD%BF%E7%94%A8hugo%E5%92%8Cgithub%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/</guid>
+      <description>&lt;h1 id=&#34;1-序言&#34;&gt;1. 序言&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;最近求职面试，最大的问题便是和面试官面对面坐着时无话可说。&lt;br&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;自己平时也比较爱折腾，喜欢尝试各种东西。但是，没有怎么记录下来，过了一段时间，再提起其中的某些细节，&lt;br&gt;
+就开始阿巴阿巴；要么，就是笔记记得太散，分散在多个设备、多款软件。需要的时候总会各种凌乱。&lt;br&gt;
+因此，就想着能不能养成一直在某个地方进行记录的习惯，最好能放到云平台上。可以不用担心换设备和软件的&lt;br&gt;
+问题。于是，就想着要不要弄一个网站来做这件事情。最后发现，hugo的操作比较简洁方便，github&lt;br&gt;
+也提供托管功能。又好又省,可以将时间精力更多的分配到内容制作上。最后就决定使用hugo和github&lt;br&gt;
+来弄。这里记录了这一过程，会介绍该过程遇到的问题和自己的理解。对想快速搭建自己的个人网站且不爱看或&lt;br&gt;
+不方便看文档的同学会很有帮助。&lt;br&gt;&lt;/p&gt;
+&lt;h1 id=&#34;2-github-创建仓库&#34;&gt;2. github 创建仓库&lt;/h1&gt;
+&lt;h2 id=&#34;21-仓库创建和开启page功能&#34;&gt;2.1 仓库创建和开启page功能&lt;/h2&gt;
+&lt;h2 id=&#34;22-仓库和网站的映射&#34;&gt;2.2 仓库和网站的映射&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;根链接：
+&lt;ul&gt;
+&lt;li&gt;代码仓库&lt;br&gt;
+&lt;a href=&#34;https://github.com/user_name/repo_name/&#34;&gt;https://github.com/user_name/repo_name/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;网站&lt;br&gt;
+&lt;a href=&#34;https://user_name.github.io/repo_name/&#34;&gt;https://user_name.github.io/repo_name/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;注意，以下使用的地址/链接均是相对根链接的。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;输入网址/path时，会到仓库的/path目录取依次查找相关的文件：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;如果存在index.html，则只会使用index.html。&lt;/li&gt;
+&lt;li&gt;如果存在README.md，则会使用README.md。&lt;strong&gt;会将有效的目录作为链接+README.md的内容一并返回（垂直排列）。&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;如果都不存在则会报404错误。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;https://despotx.github.io/orion/img/%E4%BD%BF%E7%94%A8hugo%E5%92%8Cgithub%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/%E4%BB%93%E5%BA%93%E7%BB%93%E6%9E%84.png&#34; alt=&#34;仓库结构图&#34;&gt;&lt;/p&gt;
+&lt;p&gt;如上图，输入/时，会显示/index.html的内容；输入/sub/时，会列出/的链接和显示&lt;br&gt;
+/sub/README.md的内容，因为/可以返回内容，如下图所示；输入/sub1/时，报404错误。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://despotx.github.io/orion/img/%E4%BD%BF%E7%94%A8hugo%E5%92%8Cgithub%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/README%E7%BB%93%E6%9E%9C.png&#34; alt=&#34;结果显示&#34;&gt;&lt;/p&gt;
+&lt;p&gt;上图为/sub/返回的结果。其中，上面部分为链接（上一级目录可以渲染，为根目录，目录名称为test）,&lt;br&gt;
+下面部分为/sub/README.md的内容。&lt;/p&gt;
+&lt;h1 id=&#34;3-hugo安装和使用&#34;&gt;3. hugo安装和使用&lt;/h1&gt;
+&lt;h1 id=&#34;4-部署网站到仓库&#34;&gt;4. 部署网站到仓库&lt;/h1&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
