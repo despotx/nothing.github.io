@@ -39,7 +39,7 @@
 &lt;p&gt;开启page功能&lt;/p&gt;
 &lt;p&gt;具体来说时，挂载提供网页服务的分支，初始值为none。&lt;/p&gt;
 &lt;p&gt;进入仓库页面，如下图进行操作。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://despotx.github.io/orion/img%5C%E4%BD%BF%E7%94%A8hugo%E5%92%8Cgithub%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%5Cimage-20231015091041273.png&#34; alt=&#34;image-20231015091041273&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://despotx.github.io/orion/img/%E4%BD%BF%E7%94%A8hugo%E5%92%8Cgithub%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/image-20231015091041273.png&#34; alt=&#34;image-20231015091041273&#34;&gt;&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;选择Settings。&lt;/li&gt;
 &lt;li&gt;点击Pages。&lt;/li&gt;
@@ -86,7 +86,7 @@
 &lt;h2 id=&#34;31-本地创建工程&#34;&gt;3.1 本地创建工程&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;hugo new site your_site_path		&lt;span style=&#34;color:#75715e&#34;&gt;# 新建工程，路径为绝对的文件路径&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;工程根目录如下图。新建的网站根目录不存在public文件夹。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://despotx.github.io/orion/img%5C%E4%BD%BF%E7%94%A8hugo%E5%92%8Cgithub%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%5Cimage-20231015093129945.png&#34; alt=&#34;image-20231015093129945&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://despotx.github.io/orion/img/%E4%BD%BF%E7%94%A8hugo%E5%92%8Cgithub%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/image-20231015093129945.png&#34; alt=&#34;image-20231015093129945&#34;&gt;&lt;/p&gt;
 &lt;p&gt;需要关注的目录/文件有：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -146,6 +146,7 @@ content/post/helloworld.md，那么，其网站链接为baseURL/post/helloworld/
 &lt;h2 id=&#34;33-部署&#34;&gt;3.3 部署&lt;/h2&gt;
 &lt;p&gt;由content的产生的文件以及static的文件都会放到网站根目录上。&lt;/p&gt;
 &lt;h5 id=&#34;本地部署&#34;&gt;本地部署&lt;/h5&gt;
+&lt;p&gt;&lt;strong&gt;链接路径分隔符要用/&lt;/strong&gt;&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;静态文件链接为/相对static文件的相对地址。如static/img/test.png应写为/img/test.png&lt;/p&gt;

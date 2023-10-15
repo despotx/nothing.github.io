@@ -209,7 +209,7 @@ onload='renderMathInElement(document.body);'></script>
 <p>开启page功能</p>
 <p>具体来说时，挂载提供网页服务的分支，初始值为none。</p>
 <p>进入仓库页面，如下图进行操作。</p>
-<p><img src="https://despotx.github.io/orion/img%5C%E4%BD%BF%E7%94%A8hugo%E5%92%8Cgithub%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%5Cimage-20231015091041273.png" alt="image-20231015091041273"></p>
+<p><img src="https://despotx.github.io/orion/img/%E4%BD%BF%E7%94%A8hugo%E5%92%8Cgithub%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/image-20231015091041273.png" alt="image-20231015091041273"></p>
 <ol>
 <li>选择Settings。</li>
 <li>点击Pages。</li>
@@ -256,7 +256,7 @@ onload='renderMathInElement(document.body);'></script>
 <h2 id="31-本地创建工程">3.1 本地创建工程</h2>
 <div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>hugo new site your_site_path		<span style="color:#75715e"># 新建工程，路径为绝对的文件路径</span>
 </span></span></code></pre></div><p>工程根目录如下图。新建的网站根目录不存在public文件夹。</p>
-<p><img src="https://despotx.github.io/orion/img%5C%E4%BD%BF%E7%94%A8hugo%E5%92%8Cgithub%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%5Cimage-20231015093129945.png" alt="image-20231015093129945"></p>
+<p><img src="https://despotx.github.io/orion/img/%E4%BD%BF%E7%94%A8hugo%E5%92%8Cgithub%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/image-20231015093129945.png" alt="image-20231015093129945"></p>
 <p>需要关注的目录/文件有：</p>
 <ul>
 <li>
@@ -316,6 +316,7 @@ content/post/helloworld.md，那么，其网站链接为baseURL/post/helloworld/
 <h2 id="33-部署">3.3 部署</h2>
 <p>由content的产生的文件以及static的文件都会放到网站根目录上。</p>
 <h5 id="本地部署">本地部署</h5>
+<p><strong>链接路径分隔符要用/</strong></p>
 <ol>
 <li>
 <p>静态文件链接为/相对static文件的相对地址。如static/img/test.png应写为/img/test.png</p>
