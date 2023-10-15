@@ -25,7 +25,7 @@
 &lt;p&gt;自己平时也比较爱折腾，喜欢尝试各种东西。但是，没有怎么记录下来，过了一段时间，再提起其中的某些细节，就开始阿巴阿巴；要么，就是笔记记得太散，分散在多个设备、多款软件。需要的时候总会各种凌乱。因此，就想着能不能养成一直在某个地方进行记录的习惯，最好能放到云平台上。可以不用担心换设备和软件的问题。于是，就想着要不要弄一个网站来做这件事情。最后发现，hugo的操作比较简洁方便，github也提供托管功能。又好又省,可以将时间精力更多的分配到内容制作上。最后就决定使用hugo和github来弄。这里记录了这一过程，会介绍该过程遇到的问题和自己的理解。对想快速搭建自己的个人网站且不爱看或不方便看文档的同学会很有帮助。&lt;/p&gt;
 &lt;h1 id=&#34;2-github-创建仓库&#34;&gt;2. github 创建仓库&lt;/h1&gt;
 &lt;h2 id=&#34;21-仓库创建和开启page功能&#34;&gt;2.1 仓库创建和开启page功能&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&#34;https://despotx.github.io/orion/%E4%BD%BF%E7%94%A8hugo%E5%92%8Cgithub%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/image-20231015083045597.png&#34; alt=&#34;image-20231015083045597&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://despotx.github.io/orion/img%5C%E4%BD%BF%E7%94%A8hugo%E5%92%8Cgithub%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%5Cimage-20231015085928146.png&#34; alt=&#34;image-20231015085928146&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;22-仓库和网站的映射&#34;&gt;2.2 仓库和网站的映射&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;根链接：
