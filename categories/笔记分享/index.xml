@@ -24,8 +24,33 @@
 &lt;/ul&gt;
 &lt;p&gt;自己平时也比较爱折腾，喜欢尝试各种东西。但是，没有怎么记录下来，过了一段时间，再提起其中的某些细节，就开始阿巴阿巴；要么，就是笔记记得太散，分散在多个设备、多款软件。需要的时候总会各种凌乱。因此，就想着能不能养成一直在某个地方进行记录的习惯，最好能放到云平台上。可以不用担心换设备和软件的问题。于是，就想着要不要弄一个网站来做这件事情。最后发现，hugo的操作比较简洁方便，github也提供托管功能。又好又省,可以将时间精力更多的分配到内容制作上。最后就决定使用hugo和github来弄。这里记录了这一过程，会介绍该过程遇到的问题和自己的理解。对想快速搭建自己的个人网站且不爱看或不方便看文档的同学会很有帮助。&lt;/p&gt;
 &lt;h1 id=&#34;2-github-创建仓库&#34;&gt;2. github 创建仓库&lt;/h1&gt;
-&lt;h2 id=&#34;21-仓库创建和开启page功能&#34;&gt;2.1 仓库创建和开启page功能&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&#34;https://despotx.github.io/orion/img%5C%E4%BD%BF%E7%94%A8hugo%E5%92%8Cgithub%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%5Cimage-20231015085928146.png&#34; alt=&#34;image-20231015085928146&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;21-仓库创建与开启page功能&#34;&gt;2.1 仓库创建与开启page功能&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;仓库创建&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;仓库名任意，没有特别的格式要求，只要不与原来的冲突即可。
+一些博客的说法是格式为*.github.io。经测试，我发现这种格式和没有格式的仓库
+提供网站服务时并没有什么区别。&lt;/li&gt;
+&lt;li&gt;免费的github pages需要&lt;strong&gt;公开仓库&lt;/strong&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;开启page功能&lt;/p&gt;
+&lt;p&gt;具体来说时，挂载提供网页服务的分支，初始值为none。&lt;/p&gt;
+&lt;p&gt;进入仓库页面，如下图进行操作。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://despotx.github.io/orion/img%5C%E4%BD%BF%E7%94%A8hugo%E5%92%8Cgithub%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%5Cimage-20231015091041273.png&#34; alt=&#34;image-20231015091041273&#34;&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;选择Settings。&lt;/li&gt;
+&lt;li&gt;点击Pages。&lt;/li&gt;
+&lt;li&gt;选择分支。&lt;/li&gt;
+&lt;li&gt;选择仓库中哪个目录作为网站的根目录。仓库不全是页面文件时，可更换目录，保持仓库看起来清爽。
+**为了方便使用hugo生成和部署，不推荐更换。**不然，在生成静态文件后，还要在本地仓库建立docs目录，
+然后，将所有静态文件（public下）拷贝到docs目录，然后再更新远程仓库。&lt;/li&gt;
+&lt;li&gt;可访问的网站根链接。设置完前面几步后，需要稍微等以下，才能刷新出这个信息。从仓库到网站存在延迟。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
 &lt;h2 id=&#34;22-仓库和网站的映射&#34;&gt;2.2 仓库和网站的映射&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;根链接：
@@ -33,7 +58,7 @@
 &lt;li&gt;代码仓库&lt;br&gt;
 &lt;a href=&#34;https://github.com/user_name/repo_name/&#34;&gt;https://github.com/user_name/repo_name/&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;网站&lt;br&gt;
-&lt;a href=&#34;https://user_name.github.io/repo_name/&#34;&gt;https://user_name.github.io/repo_name/&lt;/a&gt;&lt;/li&gt;
+&lt;a href=&#34;https://user_name.github.io/repo_name/&#34;&gt;https://user_name.github.io/repo_name/&lt;/a&gt;（由上一步中决定是否还有前缀）&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -54,8 +79,127 @@
 &lt;li&gt;可通过网站完整链接访问到其他资源，比如重要的图片资源。&lt;/li&gt;
 &lt;li&gt;在Markdown文件中使用图片资源时，需要手动加网站根目录作为前缀。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1 id=&#34;3-hugo安装和使用&#34;&gt;3. hugo安装和使用&lt;/h1&gt;
-&lt;h1 id=&#34;4-部署网站到仓库&#34;&gt;4. 部署网站到仓库&lt;/h1&gt;
+&lt;h1 id=&#34;3-hugo安装和使用以及网站部署到github-pages&#34;&gt;3. hugo安装和使用以及网站部署到github Pages&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.gohugo.org/&#34;&gt;Hugo中文文档 (gohugo.org)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;可根据上述文档，下载和安装hugo，以及简单使用，这个过程超级简单。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;这个链接里包含了下载、安装、使用、以及部署到github Pages的基本操作，下面不再赘述。主要介绍一些盲点。&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;31-本地创建工程&#34;&gt;3.1 本地创建工程&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;hugo new site your_site_path		&lt;span style=&#34;color:#75715e&#34;&gt;# 新建工程，路径为绝对的文件路径&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;工程根目录如下图。新建的网站根目录不存在public文件夹。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://despotx.github.io/orion/img%5C%E4%BD%BF%E7%94%A8hugo%E5%92%8Cgithub%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%5Cimage-20231015093129945.png&#34; alt=&#34;image-20231015093129945&#34;&gt;&lt;/p&gt;
+&lt;p&gt;需要关注的目录/文件有：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;archetypes
+存在模板文件default.md。当使用hugo提供的指令创建新贴时，会使用这个文件作为模板。需要注意的是，&lt;strong&gt;文件头（front matter)部分，默认带参数draft参数，true表示当前文件为草稿，就不会被发布。&lt;/strong&gt;
+具体支持哪些参数，可参考官方文档。这里提两个：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;categories = []&lt;/li&gt;
+&lt;li&gt;tags = []&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;hugo在生成静态文件时，会自动生成对应的/categories/和/tags/两个目录以及这两个目录的页面。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;content
+存放文章的地方。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;hugo new path/to/filename.md	&lt;span style=&#34;color:#75715e&#34;&gt;# 以content目录为根路径，创建文件path/to/filename.md,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;							  &lt;span style=&#34;color:#75715e&#34;&gt;# 使用default.md中的数据，并替换其中的占位符。&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;public
+存放hugo生成的静态网页文件的地方。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;static
+存放静态文件，如图片等。这部分文件会在生成网页时一并拷贝到public目录下。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;themes
+主题存放位置。每个主题文件夹都是一个git仓库（直接从github上拉取）。&lt;/p&gt;
+&lt;p&gt;在配置文件中使用参数theme来指定主题。hugo会使用theme的字符串值来匹配themes目录下的文件夹名。&lt;/p&gt;
+&lt;p&gt;所以，&lt;strong&gt;theme的值，应为themes下想要使用的主题的文件夹名。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.gohugo.org/theme/&#34;&gt;皮肤列表 - Hugo中文文档 (gohugo.org)&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;hugo.toml
+配置文件。以下是几个关键的参数：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;theme
+设置主题。&lt;/li&gt;
+&lt;li&gt;baseURL
+设置网站根链接。在生成网页时，会使用这个值作为每个页面链接的前缀。&lt;strong&gt;如文章文件路径为
+content/post/helloworld.md，那么，其网站链接为baseURL/post/helloworld/。&lt;/strong&gt;
+&lt;strong&gt;&lt;em&gt;需要注意的是，markdown文件中使用的链接，如超链接、图片链接等，hugo在生成静态网页&lt;/em&gt;
+&lt;em&gt;的时候不会进行处理。这意味着，相对链接或本地的绝对链接在部署到网上后，就会失效&lt;/em&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;tips
+一般clone下来的theme都有一个exampleSite文件夹，是一个网站的完整配置。我一般直接使用这个文件夹的配置文件，&lt;/p&gt;
+&lt;p&gt;主要关注这个文件夹下的config文件夹以及.toml文件。然后，再根据需要修改一些参数值，基本满足大部分需求。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;32-content&#34;&gt;3.2 content&lt;/h2&gt;
+&lt;p&gt;hugo 会根据这个目录content下的md文件，创建对应的index.html文件。其对应关系如下：&lt;/p&gt;
+&lt;p&gt;path/to/filename.md -&amp;gt; path/to/filename/index.html&lt;/p&gt;
+&lt;p&gt;同时，会根据md文件的参数categories以及tags的值的集合来决定是否创建/categories/index.html和/tags/index.html文件及其内容；&lt;/p&gt;
+&lt;p&gt;不需要用户手动处理。&lt;/p&gt;
+&lt;p&gt;主题中，一般都会设置about、categories、tags的入口。比如，about，其链接地址为网站根地址/about，只需在content目录下，创建一个about.md文件，并填写内容即可。&lt;/p&gt;
+&lt;h2 id=&#34;33-部署&#34;&gt;3.3 部署&lt;/h2&gt;
+&lt;p&gt;由content的产生的文件以及static的文件都会放到网站根目录上。&lt;/p&gt;
+&lt;h5 id=&#34;本地部署&#34;&gt;本地部署&lt;/h5&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;静态文件链接为/相对static文件的相对地址。如static/img/test.png应写为/img/test.png&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;如果想引用md文件，则使用相对content的文件路径，去掉.md后缀。如content/helloworld.md应写为/helloworld/&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;hugo server			 &lt;span style=&#34;color:#75715e&#34;&gt;# 启动本地服务，默认端口为1313，访问链接为http://localhost:1313/，&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;					&lt;span style=&#34;color:#75715e&#34;&gt;# 需要将此链接作为baseURL&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h5 id=&#34;github-pages部署&#34;&gt;github pages部署&lt;/h5&gt;
+&lt;p&gt;&lt;strong&gt;为了保证仓库根目录简洁&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;不建议将大量md文件直接放到content目录下。&lt;/li&gt;
+&lt;li&gt;不建议将图片直接放到static目录下。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;将本地部署的1. 2.内容，都加上网站跟地址作为前缀。&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;hugo				&lt;span style=&#34;color:#75715e&#34;&gt;# 生成网页文件到public目录，baseURL为访问的github pages的网站地址。&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# github端，使用/（root)来提供pages服务的情况下 &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#111&#34;&gt;cd&lt;/span&gt; public			&lt;span style=&#34;color:#75715e&#34;&gt;# 进入生成的网页文件所在的目录&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# github端，使用/docs来提供pages服务的情况下&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cp public/* local_repo/docs &lt;span style=&#34;color:#75715e&#34;&gt;# 拷贝网页文件&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#111&#34;&gt;cd&lt;/span&gt; local_repo
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 同步仓库&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git add .
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git commit -m &lt;span style=&#34;color:#d88200&#34;&gt;&amp;#34;comment&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git push			&lt;span style=&#34;color:#75715e&#34;&gt;# 将静态文件推送到git仓库，前提是仓库已经建立连接，初始push时，使用-u参数。&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;push完成后，仓库更新到网站更新存在延迟。&lt;/p&gt;
+&lt;h1 id=&#34;4--总结&#34;&gt;4  总结&lt;/h1&gt;
+&lt;p&gt;主要为几个目录/文件映射关系&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;hugo工程与public
+&lt;ol&gt;
+&lt;li&gt;content/path/to/filename.md &amp;lt;-&amp;gt; public/path/to/filename/index.html&lt;/li&gt;
+&lt;li&gt;static/path/to/file &amp;lt;-&amp;gt; public/path/to/file&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;public与github仓库
+&lt;ol&gt;
+&lt;li&gt;这个主要考虑，用户想要把public放到github仓库的哪个位置。github Pages只提供了两个选项。一是/（root)，即根目录；二是/docs,需要在根目录下创建一个docs文件夹，然后把public里的文件拷贝过去。然后再同步仓库。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;github仓库目录与网站目录
+&lt;ul&gt;
+&lt;li&gt;网站链接分割为：网站目录/相对路径，&lt;/li&gt;
+&lt;li&gt;github仓库链接为：仓库根链接[/docs]/相对路径。如果用户开放pages的目录不为根目录，则链接存在/docs。&lt;/li&gt;
+&lt;li&gt;上面两个相对路径是完全一致的。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;这是默认情况下的，如果可以更改某些设置达到想要的映射效果，请忽略这部分内容。&lt;/p&gt;
 </description>
     </item>
     
