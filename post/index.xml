@@ -7,23 +7,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>cn</language>
     <copyright>探索世界、发现世界、拥抱世界。</copyright>
+    <lastBuildDate>Sat, 14 Oct 2023 22:27:37 +0800</lastBuildDate>
     
 	<atom:link href="https://despotx.github.io/orion/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title></title>
+      <title>使用hugo和github搭建个人博客网站</title>
       <link>https://despotx.github.io/orion/post/%E4%BD%BF%E7%94%A8hugo%E5%92%8Cgithub%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 14 Oct 2023 22:27:37 +0800</pubDate>
       
       <guid>https://despotx.github.io/orion/post/%E4%BD%BF%E7%94%A8hugo%E5%92%8Cgithub%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/</guid>
-      <description>&lt;p&gt;+++
-title =  &amp;ldquo;使用hugo和github搭建个人博客网站&amp;rdquo;
-date = 2023-10-14T22:27:37+08:00
-categories = [&amp;ldquo;笔记分享&amp;rdquo;]
-description = &amp;ldquo;首次建站经验贴，适合小白和非技术人员快速入门&amp;rdquo;
-+++&lt;/p&gt;
-&lt;h1 id=&#34;1-序言&#34;&gt;1. 序言&lt;/h1&gt;
+      <description>&lt;h1 id=&#34;1-序言&#34;&gt;1. 序言&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;最近求职面试，最大的问题便是和面试官面对面坐着时无话可说。&lt;/li&gt;
 &lt;/ul&gt;
